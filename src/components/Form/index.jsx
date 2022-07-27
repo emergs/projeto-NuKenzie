@@ -1,25 +1,26 @@
 import { useState } from 'react';
 import './style.css';
 
-const Form = (props)=>{
+const Form = ({listTransactions, setListTransactions, filterListTransactions, setFilterListTransactions})=>{
   const[description,setDescription] = useState('');
-  const[value,setValue] = useState(1);
-  const[typeInput,setTypeInput] = useState('')
+  const[value,setValue] = useState();
+  const[typeInput,setTypeInput] = useState('');
   
   const addItemList = (event,desc,value,input) =>{
     event.preventDefault()
     const newItem = {
       description: desc,
       type: input,
-      value: value,
+      value: parseInt(value)
     }
-    console.log(input)
-    props.setListTransactions([...props.listTransactions,newItem])
-    console.log(props.listTransactions)
+    
+    setListTransactions([...listTransactions,newItem]);
+    setFilterListTransactions([...filterListTransactions,newItem]);
+    console.log(listTransactions)
   }
 
   return(
-    <form action="" className="formMain" onSubmit={(event) => addItemList(event,description,value,typeInput)}>
+    <form action="" className="formMain">
       <div className="formDescription">
         <label htmlFor="">Descrição</label>
         <input type="text" placeholder="Digite aqui sua descrição" value={description} onChange={(e)=> setDescription(e.target.value)}/>
@@ -28,19 +29,19 @@ const Form = (props)=>{
       <div className="formValueAndType">
         <div>
           <label htmlFor="">Valor</label>
-          <input type="text" placeholder='1' value={value} onChange={(e)=> setValue(e.target.value)}/> 
+          <input type="number" placeholder={1} value={value} onChange={(e)=> setValue(e.target.value)}/> 
         </div>
         <div>
           <label htmlFor="">Tipo de valor</label>
           <select name="" id="" value={typeInput} onChange={(e)=> setTypeInput(e.target.value)}>
             <option value=""></option>
-            <option value="Entrada">Entrada</option>
-            <option value="Despesa">Despesa</option>
+            <option value="entrada">Entrada</option>
+            <option value="despesa">Despesa</option>
           </select>
         </div>
       </div>
       <div className="formButton">
-        <button type='submit'>Inserir valor</button>
+        <button type='button' onClick={(event) => addItemList(event,description,value,typeInput)}>Inserir valor</button>
       </div>
     </form>
   )

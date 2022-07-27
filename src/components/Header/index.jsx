@@ -1,4 +1,5 @@
 import imgLogo from '../../assets/nukenzie.svg'
+import './style.css';
 
 const Header = ()=>{
 

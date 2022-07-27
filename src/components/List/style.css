@@ -12,3 +12,8 @@
   padding-left: 0px;
   padding-right: 0px;
 }
+
+.liContentList:hover{
+  background: var(--whiteColor);
+  cursor: pointer;
+}
