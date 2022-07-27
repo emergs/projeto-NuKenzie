@@ -5,8 +5,10 @@ const Header = ()=>{
 
   return(
     <div className="header centerVert">
-      <img src={imgLogo} alt="logo" />
-      <button>Inicio</button>
+      <div>
+        <img src={imgLogo} alt="logo" />
+        <button>Inicio</button>
+      </div>
     </div>
   )
 }

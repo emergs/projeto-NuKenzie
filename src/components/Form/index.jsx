@@ -23,17 +23,17 @@ const Form = ({listTransactions, setListTransactions, filterListTransactions, se
     <form action="" className="formMain">
       <div className="formDescription">
         <label htmlFor="">Descrição</label>
-        <input type="text" placeholder="Digite aqui sua descrição" value={description} onChange={(e)=> setDescription(e.target.value)}/>
+        <input required type="text" placeholder="Digite aqui sua descrição" value={description} onChange={(e)=> setDescription(e.target.value)} />
         <span>Ex: Compra de Roupas</span>
       </div>
       <div className="formValueAndType">
         <div>
           <label htmlFor="">Valor</label>
-          <input type="number" placeholder={1} value={value} onChange={(e)=> setValue(e.target.value)}/> 
+          <input type="number" placeholder={1} value={value} onChange={(e)=> setValue(e.target.value)} required/> 
         </div>
         <div>
           <label htmlFor="">Tipo de valor</label>
-          <select name="" id="" value={typeInput} onChange={(e)=> setTypeInput(e.target.value)}>
+          <select name="" id="" value={typeInput} onChange={(e)=> setTypeInput(e.target.value)} required>
             <option value=""></option>
             <option value="entrada">Entrada</option>
             <option value="despesa">Despesa</option>
