@@ -1,0 +1,121 @@
+.columnInputs{
+  width: 95%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+}
+
+.formMain{
+  width: 100%;
+  height: 351px;
+  flex-direction: column;
+  border: 2px solid var(--gray2);
+  border-radius: 4px;
+  margin-top: 39px;
+}
+
+.formDescription{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 135px;
+  padding-top: 38px;
+  padding-left: 24.5px;
+  padding-right: 24.5px;
+}
+
+.formDescription label{
+  font:var(--caption);
+  color:var(--gray4);
+}
+
+.formDescription input{
+  height: 52.8px;
+  background-color: var(--gray1);
+  border: 1px solid var(--gray1);
+  border-radius: 8px;
+  margin-top: 12.1px;
+}
+
+.formDescription input::placeholder{
+  font: var(--headline);
+  color:var(--gray3);
+  padding-left: 16px;
+}
+
+.formDescription span{
+  font:var(--caption);
+  color:var(--gray4);
+  margin-top: 4.4px;
+}
+
+.formValueAndType{
+  display: flex;
+  padding-left:24.5px;
+  padding-right:24.5px;
+  justify-content: space-between;
+}
+
+.formValueAndType div:first-child{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.formValueAndType div:first-child label{
+  font:var(--caption);
+  color: var(--gray4);
+}
+
+.formValueAndType div:first-child input{
+  width: 80%;
+  height: 46px;
+  background-color: var(--gray1);
+  border: 1px solid var(--gray1);
+  border-radius: 8px;
+
+}
+
+.formValueAndType div:first-child input::placeholder{
+  padding-left: 16px;
+  font:var(--headline);
+}
+
+.formValueAndType div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.formValueAndType div:nth-child(2) label{
+  font:var(--caption);
+  color: var(--gray4);
+}
+
+.formValueAndType div:nth-child(2) select{
+  height: 48px;
+  background-color: var(--gray1);
+  border: 1px solid var(--gray1);
+  border-radius: 8px;
+}
+
+.formButton{
+  margin-top: 20px;
+  padding-left:24.5px;
+  padding-right:24.5px;
+}
+
+.formButton button{
+  height: 48px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid var(--colorPrimary);
+  background-color:var(--colorPrimary);
+  color:var(--whiteColor);
+  font: 500 16px 'Nunito',sans-serif;
+  cursor: pointer;
+}
+
+.formButton button:hover{
+  background: var(--colorPrimary2);
+  color: var(--gray1);
+}

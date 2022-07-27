@@ -1,0 +1,19 @@
+.columnList{
+  width: 95%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-top: 16px;
+}
+
+.ulList{
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.liContentList:hover{
+  background: var(--whiteColor);
+  cursor: pointer;
+}

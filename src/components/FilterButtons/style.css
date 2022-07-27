@@ -1,0 +1,52 @@
+.filterSideBar{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filterSideBar div:first-child{
+  display: flex;
+  align-items: center;
+}
+
+.filterSideBar div:first-child h3{
+  font:var(--title3);
+  color: var(--gray4);
+}
+
+.filterSideBar div:last-child{
+  display: flex;
+  gap:16px;
+}
+
+.filterSideBarInput, .filterSideBarExpense, .filterSideBarAll{
+  font: var(--fontButton);
+  padding: 15px;
+  border-radius: 8px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.filterSideBarAll{
+  background: var(--colorPrimary);
+  color:var(--whiteColor);
+  border: 1.4px solid var(--colorPrimary);
+}
+
+.filterSideBarAll:hover{
+  background: var(--colorPrimary2);
+  color: var(--gray1);
+}
+
+.filterSideBarInput, .filterSideBarExpense{
+  background: var(--gray2);
+  color:var(--gray5);
+  border: 1.4px solid var(--gray2);
+}
+
+.filterSideBarInput:hover, .filterSideBarExpense:hover{
+  background: var(--gray5);
+  color: var(--whiteColor);
+}
+
