@@ -4,7 +4,10 @@ import './style.css';
 
 const Card = ({index,item,description,value,type,handleTransactions})=>{
   return(
-    <li key={index} className='liContentList'>
+    <li 
+      key={index} 
+      className = {type === 'entrada'? 'liContentList entrance' : 'liContentList expense'}
+    >
       <div className='liContentListMain'>
         <h3>{description}</h3>
         <div>

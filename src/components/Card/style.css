@@ -8,6 +8,15 @@
   border-radius: 4px;
 }
 
+.entrance{
+  border-left:4px solid var(--colorSecondary);
+}
+
+.expense{
+  border-left:4px solid var(--gray2);
+}
+
+
 .liContentListMain{
   width: 100%;
   display: flex;

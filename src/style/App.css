@@ -103,6 +103,16 @@
   max-width: 593px;
 }
 
+/*LIST*/
+.divEmptyList{
+  margin-left: 58px;
+  margin-top: 34px;
+}
+
+.divEmptyList img{
+  width: 100%;
+}
+
 @media (min-width:769px) {
   .bodyApp{
     display: flex;
@@ -125,4 +135,4 @@
 
 /*TOTAL*/
 
-/*LIST*/
+

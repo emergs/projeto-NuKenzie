@@ -7,6 +7,7 @@ import FilterButtons from './components/FilterButtons';
 import './style/App.css';
 import imgLogo from './assets/nukenzie-white.svg';
 import imgMain from './assets/image.svg';
+import ListNoCard from './components/ListNoCard';
 
 function App() {
   const [listTransactions, setListTransactions] = useState([])
@@ -66,15 +67,23 @@ function App() {
     </div>
     :
     <div className="App">
-      <Header setDashboard={setDashboard}></Header>
+      <Header setDashboard={setDashboard}/>
       <div className="bodyApp">
         <div className="columnInputs">
           <Form listTransactions={listTransactions} setListTransactions={setListTransactions} filterListTransactions={filterListTransactions} setFilterListTransactions={setFilterListTransactions}/>
-          <TotalMoney listTransactions={listTransactions} totalValue={totalValue}></TotalMoney>
+          <TotalMoney listTransactions={listTransactions} totalValue={totalValue}/>
         </div>
+
         <div className="columnList">
           <FilterButtons AllTransactions={AllTransactions} filterInputs={filterInputs} filterExpense={filterExpense}/>
-          <List listTransactions={filterListTransactions} handleTransactions={handleTransactions}></List>
+
+          {
+            listTransactions.length < 1 ?
+            <ListNoCard/>
+            :
+            <List listTransactions={filterListTransactions} handleTransactions={handleTransactions}/>
+          }
+          
         </div>
       </div>
     </div>
