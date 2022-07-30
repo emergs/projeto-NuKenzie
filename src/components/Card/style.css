@@ -8,6 +8,15 @@
   border-radius: 4px;
 }
 
+.entrance{
+  border-left:4px solid var(--colorSecondary);
+}
+
+.expense{
+  border-left:4px solid var(--gray2);
+}
+
+
 .liContentListMain{
   width: 100%;
   display: flex;
@@ -38,7 +47,7 @@
 
 .liContentListMain div figure{
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   width: 22px;
   height: 22px;
   margin-top: 0;

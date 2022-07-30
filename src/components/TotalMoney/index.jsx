@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './style.css';
 
 const TotalMoney = (props)=>{
-  console.log(props.totalValue)
   return(
     <div className="totalMoney">
       <div className="totalMoneyValue">
