@@ -2,22 +2,21 @@ import trash from '../../assets/trashDefault.svg';
 import trash2 from '../../assets/trashHover.svg'
 import './style.css';
 
-const Card = (props)=>{
-  
+const Card = ({index,item,description,value,type,handleTransactions})=>{
   return(
-    <li key={props.index} className='liContentList'>
+    <li key={index} className='liContentList'>
       <div className='liContentListMain'>
-        <h3>{props.description}</h3>
+        <h3>{description}</h3>
         <div>
-          <span>{props.value}</span>
-          <figure>
+          <span>{value}</span>
+          <figure onClick={(event)=>handleTransactions(item.description)}>
              <img src={trash} alt='trash'/>
              <img src={trash2} alt="trashHover" />
           </figure>
         </div>
       </div>
       <div className='liContentListType'>
-        <span>{props.type}</span>
+        <span>{type}</span>
       </div>
     </li>
   )  

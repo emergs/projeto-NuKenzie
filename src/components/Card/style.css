@@ -38,7 +38,7 @@
 
 .liContentListMain div figure{
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   width: 22px;
   height: 22px;
   margin-top: 0;

@@ -8,15 +8,17 @@ const Form = ({listTransactions, setListTransactions, filterListTransactions, se
   
   const addItemList = (event,desc,value,input) =>{
     event.preventDefault()
+    setDescription('');
+    setValue('');
+    setTypeInput('');
     const newItem = {
       description: desc,
       type: input,
-      value: parseInt(value)
+      value: input === 'entrada'? parseInt(value) : parseInt(-value)
     }
     
     setListTransactions([...listTransactions,newItem]);
     setFilterListTransactions([...filterListTransactions,newItem]);
-    console.log(listTransactions)
   }
 
   return(
@@ -29,7 +31,7 @@ const Form = ({listTransactions, setListTransactions, filterListTransactions, se
       <div className="formValueAndType">
         <div>
           <label htmlFor="">Valor</label>
-          <input type="number" placeholder={1} value={value} onChange={(e)=> setValue(e.target.value)} required/> 
+          <input type="number" value={value} onChange={(e)=> setValue(e.target.value)} required/> 
         </div>
         <div>
           <label htmlFor="">Tipo de valor</label>

@@ -40,6 +40,69 @@
   height: 100vh;
 } 
 
+
+/*Initial Page*/
+
+.AppIndex{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--gray4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divContent{
+  max-width: 988px;
+  max-height: 593;
+  display: flex;
+  gap:48px;
+}
+
+.divInfo{
+  max-width: 347px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap:28px;
+}
+
+.divInfo img{
+  width: 123px;
+  height: 20px;
+}
+
+.divInfo h1{
+  font:var(--title1);
+  font-size: 38px;
+  color:var(--whiteColor);
+}
+
+.divInfo span{
+  font: var(--headline);
+  color:var(--whiteColor);
+}
+
+.divInfo button{
+  width: 241px;
+  height: 48px;
+  background-color: var(--colorPrimary);
+  font:var(--fontButton);
+  border: none;
+  border-radius: 8px;
+  color: var(--whiteColor);
+  cursor: pointer;
+}
+
+.divInfo button:hover{
+  background-color: var(--colorPrimary2);
+}
+
+.imgMain{
+  max-width: 593px;
+}
+
 @media (min-width:769px) {
   .bodyApp{
     display: flex;
