@@ -29,4 +29,10 @@
   border: 1.4px solid var(--gray2);
   border-radius: 8px;
   font:var(--fontButton);
+  cursor: pointer;
 } 
+
+.header div button:hover{
+  background-color:var(--gray5);
+  color:var(--gray1);
+}
