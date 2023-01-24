@@ -66,6 +66,7 @@
   justify-content: center;
   flex-direction: column;
   gap:28px;
+  margin-left: 30px;
 }
 
 .divInfo img{
@@ -100,7 +101,37 @@
 }
 
 .imgMain{
-  max-width: 593px;
+  max-width: 500px;
+  margin-right: 30px;
+}
+
+.imgMain img{
+  width: 100%;
+}
+
+@media(max-width:768px){
+  .divContent{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .imgMain{
+    max-width: 360px;
+  }
+
+  .imgMain img{
+    width: 100%;
+  }
+
+  .divInfo{
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .divInfo h1{
+    text-align: center;
+  }
 }
 
 /*LIST*/

@@ -34,12 +34,12 @@
   border: 1px solid var(--gray1);
   border-radius: 8px;
   margin-top: 12.1px;
+  padding-left: 16px;
 }
 
 .formDescription input::placeholder{
   font: var(--headline);
   color:var(--gray3);
-  padding-left: 16px;
 }
 
 .formDescription span{
@@ -69,6 +69,7 @@
 .formValueAndType div:first-child input{
   width: 80%;
   height: 46px;
+  padding-left: 16px;
   background-color: var(--gray1);
   border: 1px solid var(--gray1);
   border-radius: 8px;
@@ -96,6 +97,10 @@
   background-color: var(--gray1);
   border: 1px solid var(--gray1);
   border-radius: 8px;
+}
+
+#select_options option{
+  margin: 20px;
 }
 
 .formButton{
