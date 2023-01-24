@@ -35,7 +35,7 @@ const Form = ({listTransactions, setListTransactions, filterListTransactions, se
         </div>
         <div>
           <label htmlFor="">Tipo de valor</label>
-          <select name="" id="" value={typeInput} onChange={(e)=> setTypeInput(e.target.value)} required>
+          <select name="" id="select_options" value={typeInput} onChange={(e)=> setTypeInput(e.target.value)} required>
             <option value=""></option>
             <option value="entrada">Entrada</option>
             <option value="despesa">Despesa</option>
