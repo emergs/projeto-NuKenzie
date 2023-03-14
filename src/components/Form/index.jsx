@@ -9,27 +9,17 @@ const Form = ({ listTransactions, setListTransactions, filterListTransactions, s
   const [value, setValue] = useState();
   const [typeInput, setTypeInput] = useState('');
 
-  const { register, handleSubmit, formState: { errors } } = useForm()
-
-  const addItemList = (event, desc, value, input) => {
-    event.preventDefault()
-    setDescription('');
-    setValue('');
-    setTypeInput('');
-    const newItem = {
-      description: desc,
-      type: input,
-      value: input === 'entrada' ? parseInt(value) : parseInt(-value)
-    }
-
-
-
-    setListTransactions([...listTransactions, newItem]);
-    setFilterListTransactions([...filterListTransactions, newItem]);
-  }
+  const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
   const handleClick = (data) => {
-    console.log(data)
+    const newItem = {
+      description: data.description,
+      type: data.input,
+      value: data.input === 'entrada' ? parseInt(data.value) : parseInt(-data.value)
+    }
+    setListTransactions([...listTransactions, newItem]);
+    setFilterListTransactions([...filterListTransactions, newItem]);
+    reset()
   }
 
   return (
