@@ -1,25 +1,22 @@
-import { ErrorMessage } from '@hookform/error-message';
-import { click } from '@testing-library/user-event/dist/click';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import './style.css';
 
 const Form = ({ listTransactions, setListTransactions, filterListTransactions, setFilterListTransactions }) => {
-  const [description, setDescription] = useState('');
-  const [value, setValue] = useState();
-  const [typeInput, setTypeInput] = useState('');
+  const [id, setId] = useState(1)
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
   const handleClick = (data) => {
     const newItem = {
-      description: data.description,
-      type: data.input,
-      value: data.input === 'entrada' ? parseInt(data.value) : parseInt(-data.value)
+      ...data,
+      id: id,
+      value: data.type === 'entrada' ? parseInt(data.value) : parseInt(-data.value)
     }
     setListTransactions([...listTransactions, newItem]);
     setFilterListTransactions([...filterListTransactions, newItem]);
     reset()
+    setId(id + 1)
   }
 
   return (
@@ -45,9 +42,9 @@ const Form = ({ listTransactions, setListTransactions, filterListTransactions, s
 
         <div>
           <label htmlFor="">Tipo de valor</label>
-          <select id="select_options" placeholder='selecione'{...register('select_options')}>
+          <select id="type" placeholder='selecione'{...register('type')}>
             <option value="entrada">Entrada</option>
-            <option value="despesa">Despesa</option>
+            <option value="despresa">Despesa</option>
           </select>
         </div>
 
