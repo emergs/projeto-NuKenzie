@@ -11,82 +11,77 @@ import ListNoCard from './components/ListNoCard';
 
 function App() {
   const [listTransactions, setListTransactions] = useState([])
-
   const [filterListTransactions, setFilterListTransactions] = useState(listTransactions)
-
   const [dashboard, setDashboard] = useState(false)
 
-  const handleTransactions = (item) => {
-    console.log(item)
-    const itensNotRemoved = listTransactions.filter((elem)=> {
-      return elem.description !== item
+  const handleTransactions = (id) => {
+    const itensNotRemoved = listTransactions.filter((elem) => {
+      return elem.id !== id
     })
     setListTransactions(itensNotRemoved);
     setFilterListTransactions(itensNotRemoved);
   }
 
-  const filterInputs = ()=>{
-      const filters = listTransactions.filter((elem)=>{
-        return elem.type === 'entrada'
-      })
-      setFilterListTransactions(filters)
-      console.log(filters)
-    }
-  
-  const filterExpense = ()=>{
-    const filters = listTransactions.filter((elem)=>{
+  const filterInputs = () => {
+    const filters = listTransactions.filter((elem) => {
+      return elem.type === 'entrada'
+    })
+    setFilterListTransactions(filters)
+  }
+
+  const filterExpense = () => {
+    const filters = listTransactions.filter((elem) => {
       return elem.type === 'despesa'
     })
     setFilterListTransactions(filters)
-    console.log(filters)
-  }
-  
-  const AllTransactions = ()=>{
-     setFilterListTransactions(listTransactions)
   }
 
-  const totalValue = filterListTransactions.reduce((valorAnterior,valorAtual)=>{
+  const AllTransactions = () => {
+    setFilterListTransactions(listTransactions)
+  }
+
+  const totalValue = filterListTransactions.reduce((valorAnterior, valorAtual) => {
     return valorAnterior + valorAtual.value
-  },0)
+  }, 0)
 
   return (
     dashboard === false ?
-    <div className="AppIndex">
-      <div className="divContent">
-        <div className='divInfo'>
-          <img src={imgLogo} alt="" />
-          <h1>Centralize o controle das suas finanças</h1>
-          <span>de forma rápida e segura</span>
-          <button onClick={()=>setDashboard(true)}>Iniciar</button>
-        </div>
+      <div className="AppIndex">
+        <div className="divContent">
+          <div className='divInfo'>
+            <img src={imgLogo} alt="" />
+            <h1>Centralize o controle das suas finanças</h1>
+            <span>de forma rápida e segura</span>
+            <button onClick={() => setDashboard(true)}>Iniciar</button>
+          </div>
 
-        <div className="imgMain">
-          <img src={imgMain} alt="" />
+          <div className="imgMain">
+            <img src={imgMain} alt="" />
+          </div>
         </div>
       </div>
-    </div>
-    :
-    <div className="App">
-      <Header setDashboard={setDashboard}/>
-      <div className="bodyApp">
-        <div className="columnInputs">
-          <Form listTransactions={listTransactions} setListTransactions={setListTransactions} filterListTransactions={filterListTransactions} setFilterListTransactions={setFilterListTransactions}/>
-          <TotalMoney listTransactions={listTransactions} totalValue={totalValue}/>
-        </div>
+      :
+      <div className="App">
+        <Header setDashboard={setDashboard} />
+        <div className="bodyApp">
+          <div className="columnInputs">
+            <Form listTransactions={listTransactions} setListTransactions={setListTransactions} filterListTransactions={filterListTransactions} setFilterListTransactions={setFilterListTransactions} />
+            <TotalMoney listTransactions={listTransactions} totalValue={totalValue} />
+          </div>
 
-        <div className="columnList">
-          <FilterButtons AllTransactions={AllTransactions} filterInputs={filterInputs} filterExpense={filterExpense}/>
+          <div className="columnList">
+            <FilterButtons AllTransactions={AllTransactions} filterInputs={filterInputs} filterExpense={filterExpense} />
 
-          {
-            listTransactions.length < 1 ?
-            <ListNoCard/>
-            :
-            <List listTransactions={filterListTransactions} handleTransactions={handleTransactions}/>
-          }
-          
+            {
+              listTransactions.length < 1 ?
+                <ListNoCard />
+                :
+                <List listTransactions={filterListTransactions} handleTransactions={handleTransactions} />
+            }
+
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 
