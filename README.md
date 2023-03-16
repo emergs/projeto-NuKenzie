@@ -1,4 +1,4 @@
-Acesse : https://react-entrega-s1-nu-kenzie-emergs.vercel.app/
+Acesse : https://projeto-nu-kenzie-omega.vercel.app/
 
 1 - Para iniciar a aplicação clique no botão iniciar e você será redirecionado para a página principal.
 
