@@ -1,16 +1,53 @@
-Acesse : https://projeto-nu-kenzie-omega.vercel.app/
+# 🔒 Nu Kenzie 
 
-1 - Para iniciar a aplicação clique no botão iniciar e você será redirecionado para a página principal.
+## 📌 Conteúdo
 
-2 - Na página principal:
+- [Sobre](#-about)
+- [Tecnologias](#-technology)
+- [Como usar](#-how-to-use)
+- [Scripts](#-scripts)
 
-  - Ao lado esquerdo você terá uma área para inserir suas despesas e/ou proventos, e abaixo uma área onde será exibido o cálculo referentes aos dados inseridos (saldo)
-  
-  - Ao lado direito, após a descrição resumo financeiro é a área de filtro contendo três botões: todos, entradas, despesas, abaixo fica a lista dos dados cadastrados
-  
-   - O cabeçalho contém um logo e um botão para voltar à tela inicial.
-   
-3 - Para inserir novos dados preencha o campo descrição, valor e tipo de valor e clique no botão inserir valor.
+## ✏️ Sobre
 
-4 - Para exibir a lista com todos os dados inseridos clique no botão Todos, se preferir ver só os proventos clique no botão Entradas, e se quiser exibir só as despesas clique no botão Despesas.  
+Esse projeto se trata de um sistema de gerenciamento de finanças pessoais. Onde o usuário pode cadastrar e realizar o controle de despesas e proventos.
+[YouTube](https://youtube.com).
 
+
+## 💻 Tecnologias
+
+- [ReactJS](https://reactjs.org/)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+## 🛠️ Como usar
+
+Instale as dependências e utilize 😃
+
+### Instalação:
+
+```bash
+yarn
+```
+
+## ⚙️ Scripts
+
+### `start`
+
+Roda a aplicação em modo de desenvolvimento.
+[http://localhost:3000](http://localhost:3000)
+
+### `build`
+
+Cria a aplicação para produção na pasta `build`.
+
+### `test`
+
+Roda os testes.
+
+---
+
+Para testar a aplicação em ambiente de desenvolvimento acesse : https://projeto-nu-kenzie-omega.vercel.app/
+
+---
+Desenvolvido por [Emerson Gonçalves](https://www.linkedin.com/in/emerson-goncalves-dos-santos/). 
