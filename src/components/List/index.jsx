@@ -1,5 +1,5 @@
 import Card from "../Card";
-import './style.css';
+import './style.min.css';
 
 const List = ({ listTransactions, handleTransactions }) => {
   console.log(listTransactions);

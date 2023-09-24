@@ -1,13 +1,13 @@
-import imgLogo from '../../assets/nukenzie.svg'
-import './style.css';
+import imgLogo from '../../assets/images-min/nukenzie.svg'
+import './style.min.css';
 
-const Header = ({setDashboard})=>{
+const Header = ({ setDashboard }) => {
 
-  return(
+  return (
     <div className="header centerVert">
       <div>
-        <img src={imgLogo} alt="logo" />
-        <button onClick={(oldDashboard)=>setDashboard(false)}>Inicio</button>
+        <img src={imgLogo} alt="logo" width={123} height={20} />
+        <button onClick={(oldDashboard) => setDashboard(false)}>Inicio</button>
       </div>
     </div>
   )

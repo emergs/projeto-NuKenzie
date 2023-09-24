@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import './style.css';
+import './style.min.css';
 
-const TotalMoney = (props)=>{
-  return(
+const TotalMoney = (props) => {
+  return (
     <div className="totalMoney">
       <div className="totalMoneyValue">
         <h3 className='centerVert'>Valor Total:</h3>

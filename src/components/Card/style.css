@@ -1,6 +1,6 @@
-.liContentList{
+.liContentList {
   list-style: none;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   height: 87px;
   background-color: var(--gray1);
   padding-left: 18px;
@@ -8,16 +8,21 @@
   border-radius: 4px;
 }
 
-.entrance{
-  border-left:4px solid var(--colorSecondary);
+.liContentList:hover {
+  box-shadow: 0px 0px 10px 5px var(--gray2);
+  transition: 300ms linear;
 }
 
-.expense{
-  border-left:4px solid var(--gray2);
+.entrance {
+  border-left: 4px solid var(--colorSecondary);
+}
+
+.expense {
+  border-left: 4px solid var(--danger);
 }
 
 
-.liContentListMain{
+.liContentListMain {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -25,27 +30,27 @@
   padding-top: 18px;
 }
 
-.liContentListMain h3{
+.liContentListMain h3 {
   margin: 0;
   font: var(--title3);
   color: var(--gray4);
   margin-bottom: 15px;
 }
 
-.liContentListMain div{
+.liContentListMain div {
   display: flex;
   width: 20%;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.liContentListMain div span{
-  font:var(--body);
+.liContentListMain div span {
+  font: var(--body);
   color: var(--gray4);
   padding-top: 6px;
 }
 
-.liContentListMain div figure{
+.liContentListMain div figure {
   display: flex;
   align-items: flex-start;
   width: 22px;
@@ -56,21 +61,21 @@
   cursor: pointer;
 }
 
-.liContentListMain div figure:hover{
+.liContentListMain div figure:hover {
   background: var(--gray4);
 }
 
-.liContentListMain div figure img{
+.liContentListMain div figure img {
   width: 10px;
   padding: 6px;
 }
 
-.liContentListMain div figure img:first-child:hover{
+.liContentListMain div figure img:first-child:hover {
   display: none;
 }
 
-.liContentListType span{
-  font:var(--body);
+.liContentListType span {
+  font: var(--body);
   color: var(--gray5);
   padding-top: 15px;
 }

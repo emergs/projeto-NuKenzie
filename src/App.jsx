@@ -4,10 +4,11 @@ import Header from './components/Header';
 import List from './components/List';
 import TotalMoney from './components/TotalMoney';
 import FilterButtons from './components/FilterButtons';
-import './style/App.css';
-import imgLogo from './assets/nukenzie-white.svg';
-import imgMain from './assets/image.svg';
 import ListNoCard from './components/ListNoCard';
+import imgLogo from './assets/images-min/nukenzie-white.svg';
+import imgMain from './assets/images-min/image.svg';
+import './style/App.min.css';
+import './style/reset.min.css';
 
 function App() {
   const [listTransactions, setListTransactions] = useState([])
@@ -23,6 +24,7 @@ function App() {
   }
 
   const filterInputs = () => {
+    console.log(listTransactions);
     const filters = listTransactions.filter((elem) => {
       return elem.type === 'entrada'
     })
@@ -30,6 +32,7 @@ function App() {
   }
 
   const filterExpense = () => {
+    console.log('expense ok');
     const filters = listTransactions.filter((elem) => {
       return elem.type === 'despesa'
     })
@@ -49,14 +52,14 @@ function App() {
       <div className="AppIndex">
         <div className="divContent">
           <div className='divInfo'>
-            <img src={imgLogo} alt="" />
+            <img src={imgLogo} alt="" width={123} height={20} />
             <h1>Centralize o controle das suas finanças</h1>
             <span>de forma rápida e segura</span>
             <button onClick={() => setDashboard(true)}>Iniciar</button>
           </div>
 
           <div className="imgMain">
-            <img src={imgMain} alt="" />
+            <img src={imgMain} alt="" width={593} height={593} />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import './style.css';
+import './style.min.css';
 
 const Form = ({ listTransactions, setListTransactions, filterListTransactions, setFilterListTransactions }) => {
   const [id, setId] = useState(1)
@@ -44,7 +44,7 @@ const Form = ({ listTransactions, setListTransactions, filterListTransactions, s
           <label htmlFor="">Tipo de valor</label>
           <select id="type" placeholder='selecione'{...register('type')}>
             <option value="entrada">Entrada</option>
-            <option value="despresa">Despesa</option>
+            <option value="despesa">Despesa</option>
           </select>
         </div>
 
