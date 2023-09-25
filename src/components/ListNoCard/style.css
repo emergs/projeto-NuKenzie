@@ -1,8 +1,8 @@
-.h3NoCard{
-  font:var(--title3);
+.h3NoCard {
+  font: var(--title3);
 }
 
-.ulList{
+.ulList {
   width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -10,9 +10,9 @@
   padding-right: 0px;
 }
 
-.liContentList{
+.liContentList {
   list-style: none;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   height: 87px;
   background-color: var(--gray1);
   padding-left: 18px;
@@ -20,6 +20,6 @@
   border-radius: 4px;
 }
 
-.liContentList img{
+.liContentList img {
   width: 100%;
 }

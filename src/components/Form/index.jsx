@@ -1,49 +1,57 @@
 import { useState } from 'react';
-import './style.css';
+import { useForm } from 'react-hook-form';
+import './style.min.css';
 
-const Form = ({listTransactions, setListTransactions, filterListTransactions, setFilterListTransactions})=>{
-  const[description,setDescription] = useState('');
-  const[value,setValue] = useState();
-  const[typeInput,setTypeInput] = useState('');
-  
-  const addItemList = (event,desc,value,input) =>{
-    event.preventDefault()
-    setDescription('');
-    setValue('');
-    setTypeInput('');
+const Form = ({ listTransactions, setListTransactions, filterListTransactions, setFilterListTransactions }) => {
+  const [id, setId] = useState(1)
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm()
+
+  const handleClick = (data) => {
     const newItem = {
-      description: desc,
-      type: input,
-      value: input === 'entrada'? parseInt(value) : parseInt(-value)
+      ...data,
+      id: id,
+      value: data.type === 'entrada' ? parseInt(data.value) : parseInt(-data.value)
     }
-    
-    setListTransactions([...listTransactions,newItem]);
-    setFilterListTransactions([...filterListTransactions,newItem]);
+    setListTransactions([...listTransactions, newItem]);
+    setFilterListTransactions([...filterListTransactions, newItem]);
+    reset()
+    setId(id + 1)
   }
 
-  return(
-    <form action="" className="formMain">
+  return (
+    <form className="formMain" onSubmit={handleSubmit(handleClick)}>
+
       <div className="formDescription">
-        <label htmlFor="">Descrição</label>
-        <input required type="text" placeholder="Digite aqui sua descrição" value={description} onChange={(e)=> setDescription(e.target.value)} />
+        <label htmlFor="desc">Descrição</label>
+        <input {...register("description", { required: true })} />
+        {errors.description && <p className='error-message'>Preenchimento obrigatório</p>}
         <span>Ex: Compra de Roupas</span>
       </div>
+
       <div className="formValueAndType">
         <div>
           <label htmlFor="">Valor</label>
-          <input type="number" value={value} onChange={(e)=> setValue(e.target.value)} required/> 
+          <input name='valor' {...register("value", {
+            required: true,
+            pattern: /^[0-9]+$/
+          })} />
+          {errors.value?.type === 'required' && <p className='error-message'>Preenchimento obrigatório</p>}
+          {errors.value?.type === 'pattern' && <p className='error-message'>Digite somente números</p>}
         </div>
+
         <div>
           <label htmlFor="">Tipo de valor</label>
-          <select name="" id="select_options" value={typeInput} onChange={(e)=> setTypeInput(e.target.value)} required>
-            <option value=""></option>
+          <select id="type" placeholder='selecione'{...register('type')}>
             <option value="entrada">Entrada</option>
             <option value="despesa">Despesa</option>
           </select>
         </div>
+
       </div>
+
       <div className="formButton">
-        <button type='button' onClick={(event) => addItemList(event,description,value,typeInput)}>Inserir valor</button>
+        <button type='submit'>Inserir valor</button>
       </div>
     </form>
   )
