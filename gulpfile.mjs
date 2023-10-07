@@ -2,6 +2,7 @@ import pkg from "gulp";
 import img from "gulp-imagemin";
 import cssMin from "gulp-cssmin";
 import rename from "gulp-rename";
+import { deleteSync } from "del";
 const { src, dest } = pkg;
 
 function minifySvgs() {
@@ -10,18 +11,33 @@ function minifySvgs() {
     .pipe(dest("src/assets/images-min"))
 }
 
-function minifyCss() {
-  return src("src/components/**/*.css")
-    .pipe(cssMin())
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(dest("src/components"))
+async function minifyCss() {
+
+  const targetPath = 'src/components';
+
+  try {
+    deleteSync(`${targetPath}/**/*.min.css`);
+    src(`${targetPath}/**/*.css`)
+      .pipe(cssMin())
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(dest(targetPath));
+  } catch (error) {
+    console.error('Erro ao minificar os arquivos CSS:', error);
+  }
 }
 
-function minifyMainCss() {
-  return src("src/style/*.css")
-    .pipe(cssMin())
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(dest("src/style"))
+async function minifyMainCss() {
+  const targetPath = "src/style"
+
+  try {
+    deleteSync(`${targetPath}/*.min.css`)
+    src(`${targetPath}/*.css`)
+      .pipe(cssMin())
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(dest(targetPath))
+  } catch (error) {
+    console.error('Erro ao minificar os arquivos CSS:', error)
+  }
 }
 
 
