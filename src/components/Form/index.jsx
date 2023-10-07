@@ -13,8 +13,8 @@ const Form = ({ listTransactions, setListTransactions, filterListTransactions, s
       id: id,
       value: data.type === 'entrada' ? parseInt(data.value) : parseInt(-data.value)
     }
-    setListTransactions([...listTransactions, newItem]);
-    setFilterListTransactions([...filterListTransactions, newItem]);
+    setListTransactions([newItem, ...listTransactions]);
+    setFilterListTransactions([newItem, ...filterListTransactions]);
     reset()
     setId(id + 1)
   }
