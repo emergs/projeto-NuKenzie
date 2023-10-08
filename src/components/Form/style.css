@@ -42,6 +42,12 @@
   color: var(--gray3);
 }
 
+.formDescription input:focus-visible,
+.formValueAndType div:first-child input:focus-visible,
+.formValueAndType div:nth-child(2) select:focus-visible {
+  outline: 0.1px solid var(--gray2);
+}
+
 .formDescription span {
   font: var(--caption);
   color: var(--gray4);
@@ -97,6 +103,8 @@
   background-color: var(--gray1);
   border: 1px solid var(--gray1);
   border-radius: 8px;
+  padding: 0 15px;
+  font: var(--headline);
 }
 
 #select_options option {
