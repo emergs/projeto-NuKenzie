@@ -47,7 +47,6 @@ Roda os testes.
 
 ---
 
-Para testar a aplicação em ambiente de desenvolvimento acesse : https://projeto-nu-kenzie-omega.vercel.app/
-
+Para testar a aplicação em ambiente de desenvolvimento acesse : https://react-entrega-s1-nu-kenzie-emergs-git-developer-emergs.vercel.app/
 ---
 Desenvolvido por [Emerson Gonçalves](https://www.linkedin.com/in/emerson-goncalves-dos-santos/). 
