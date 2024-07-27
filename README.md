@@ -47,7 +47,7 @@ Roda os testes.
 
 ---
 
-Para testar a aplicação em ambiente de desenvolvimento acesse : 
+Para testar a aplicação em ambiente de produção acesse : 
 https://react-entrega-s1-nu-kenzie-emergs-git-developer-emergs.vercel.app/
 
 ---
